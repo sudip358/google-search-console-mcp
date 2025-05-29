@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="logo.png" alt="Google Search Console MCP Logo" width="120" />
+  <img src="logo.svg" alt="Google Search Console MCP Logo" width="120" />
 </p>
 
 # Google Search Console MCP Server
@@ -193,8 +193,8 @@ pip install -r requirements.txt
 {
   "mcpServers": {
     "gsc-search": {
-      "command": "/full/path/to/gsc-mcp-server/venv/bin/python",
-      "args": ["/full/path/to/gsc-mcp-server/gsc_mcp_server.py"],
+      "command": "/full/path/to/google-search-console-mcp/venv/bin/python",
+      "args": ["/full/path/to/google-search-console-mcp/gsc_mcp_server.py"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/your/service-account-key.json",
         "GSC_PROPERTY": "sc-domain:example.com"
@@ -362,12 +362,14 @@ pip install --user google-search-console-mcp
 ```
 google-search-console-mcp/
 ├── gsc_mcp_server.py       # Main MCP server
-├── gsc_dimensions.json     # All available GSC dimensions
-├── gsc_metrics.json        # All available GSC metrics
+├── gsc_dimensions.json     # GSC dimensions configuration
+├── gsc_metrics.json        # GSC metrics configuration
+├── gsc_filters.json        # GSC filters configuration
 ├── requirements.txt        # Python dependencies
 ├── pyproject.toml          # Package configuration
-├── README.md               # This file
-└── claude-config-template.json  # MCP configuration template
+├── README.md              # Documentation
+├── claude-config-template.json  # MCP configuration template
+└── logo.svg               # Project logo
 ```
 
 ---
