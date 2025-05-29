@@ -36,4 +36,4 @@ Repository = "https://github.com/surendranb/google-search-console-mcp.git"
 Issues = "https://github.com/surendranb/google-search-console-mcp/issues"
 
 [tool.hatch.build.targets.wheel]
-packages = ["gsc_mcp_server"]
+packages = ["."]
