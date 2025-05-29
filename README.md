@@ -153,7 +153,7 @@ If `python3 --version` worked:
       "args": ["-m", "gsc_mcp_server"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/your/service-account-key.json",
-        "GSC_PROPERTY": "sc-domain:example.com"
+        "GSC_SITE_URL": "https://example.com/"
       }
     }
   }
@@ -170,7 +170,7 @@ If `python --version` worked:
       "args": ["-m", "gsc_mcp_server"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/your/service-account-key.json",
-        "GSC_PROPERTY": "sc-domain:example.com"
+        "GSC_SITE_URL": "https://example.com/"
       }
     }
   }
@@ -197,7 +197,7 @@ pip install -r requirements.txt
       "args": ["/full/path/to/google-search-console-mcp/gsc_mcp_server.py"],
       "env": {
         "GOOGLE_APPLICATION_CREDENTIALS": "/path/to/your/service-account-key.json",
-        "GSC_PROPERTY": "sc-domain:example.com"
+        "GSC_SITE_URL": "https://example.com/"
       }
     }
   }
@@ -210,8 +210,13 @@ pip install -r requirements.txt
 
 **Replace these placeholders in your MCP configuration:**
 - `/path/to/your/service-account-key.json` with your JSON file path
-- `sc-domain:example.com` with your Search Console property
-- `/full/path/to/gsc-mcp-server/` with your download path (Method B only)
+- `https://example.com/` with your Search Console property URL
+- `/full/path/to/google-search-console-mcp/` with your download path (Method B only)
+
+**Important Notes:**
+- For URL-prefix properties: Use `https://example.com/` format
+- For domain properties: Use `sc-domain:example.com` format
+- Make sure the URL format exactly matches your Search Console property
 
 ---
 
@@ -289,35 +294,35 @@ This demonstrates:
 
 ## Available Tools
 
-The server provides 5 main tools:
+The server provides 7 main tools:
 
-1. **`get_gsc_data`** - Retrieve GSC data with custom dimensions and metrics
-2. **`list_dimension_categories`** - Browse available dimension categories
-3. **`list_metric_categories`** - Browse available metric categories
-4. **`get_dimensions_by_category`** - Get dimensions for a specific category
-5. **`get_metrics_by_category`** - Get metrics for a specific category
+1. **`list_gsc_sites`** - List all verified sites in your Search Console
+2. **`list_available_dimensions`** - Show all available GSC dimensions
+3. **`list_available_metrics`** - Show all available GSC metrics
+4. **`get_search_analytics`** - Retrieve search performance data with custom filters
+5. **`get_sitemaps`** - List all submitted sitemaps for your site
+6. **`submit_sitemap`** - Submit a new sitemap to Search Console
+7. **`delete_sitemap`** - Remove a sitemap from Search Console
 
 ---
 
 ## Dimensions & Metrics
 
-Access to all GSC dimensions and metrics organized by category:
+Access to all GSC dimensions and metrics:
 
-### Dimension Categories
-- **Time**: date, month, year
-- **Geography**: country, region
-- **Device**: desktop, mobile, tablet
-- **Search Appearance**: AMP, rich results, featured snippets
-- **Page**: URL, type
-- **Query**: search terms, query type
-- And more categories
+### Available Dimensions
+- **country**: Three-letter ISO 3166-1 alpha-3 country code
+- **device**: DESKTOP, MOBILE, or TABLET
+- **page**: Canonical URL of the page
+- **query**: Search query string
+- **searchAppearance**: Type like AMP_BLUE_LINK, RICHCARD, FEATURED_SNIPPET
+- **date**: Date in YYYY-MM-DD format
 
-### Metric Categories
-- **Performance**: clicks, impressions, CTR, position
-- **Search Features**: rich results, AMP, featured snippets
-- **Device Metrics**: mobile vs desktop performance
-- **Geographic Metrics**: country and region performance
-- And more specialized metrics
+### Available Metrics (Always Returned)
+- **clicks**: Total number of clicks
+- **impressions**: Total number of impressions
+- **ctr**: Click-through rate as percentage
+- **position**: Average search position
 
 ---
 

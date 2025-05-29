@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "google-search-console-mcp"
-version = "0.1.0"
+version = "0.2.0"
 description = "Connect Google Search Console data to Claude, Cursor and other MCP clients. Query your website's search performance data in natural language."
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
 authors = [
-    { name = "Surendran Balachandran", email = "surendran.balachandran@gmail.com" }
+    { name = "Surendran B", email = "surendran.balachandran@gmail.com" }
 ]
 classifiers = [
     "Development Status :: 4 - Beta",
@@ -24,6 +24,7 @@ classifiers = [
     "Topic :: Software Development :: Libraries :: Python Modules",
 ]
 dependencies = [
+    "fastmcp>=0.1.0",
     "google-api-python-client>=2.0.0",
     "google-auth>=2.0.0",
     "google-auth-oauthlib>=0.4.0",
@@ -35,5 +36,18 @@ Homepage = "https://github.com/surendranb/google-search-console-mcp"
 Repository = "https://github.com/surendranb/google-search-console-mcp.git"
 Issues = "https://github.com/surendranb/google-search-console-mcp/issues"
 
+[project.scripts]
+gsc-mcp = "gsc_mcp_server:main"
+
 [tool.hatch.build.targets.wheel]
 packages = ["."]
+
+[tool.hatch.build]
+include = [
+    "gsc_mcp_server.py",
+    "gsc_dimensions.json",
+    "gsc_metrics.json",
+    "gsc_filters.json",
+    "README.md",
+    "LICENSE"
+]

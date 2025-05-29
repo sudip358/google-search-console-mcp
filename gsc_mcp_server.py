@@ -320,5 +320,6 @@ def delete_sitemap(sitemap_url):
 
 # Start the server when run directly
 if __name__ == "__main__":
+    # Use stdio transport ONLY - this is critical for MCP with Claude
     print("Starting GSC MCP server...", file=sys.stderr)
     mcp.run(transport="stdio")
