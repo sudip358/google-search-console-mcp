@@ -5,6 +5,7 @@
 # Google Search Console MCP Server
 
 [![PyPI version](https://badge.fury.io/py/google-search-console-mcp.svg)](https://badge.fury.io/py/google-search-console-mcp)
+[![PyPI Downloads](https://static.pepy.tech/badge/google-search-console-mcp)](https://pepy.tech/projects/google-search-console-mc)
 [![GitHub stars](https://img.shields.io/github/stars/surendranb/google-search-console-mcp?style=social)](https://github.com/surendranb/google-search-console-mcp/stargazers)
 [![GitHub forks](https://img.shields.io/github/forks/surendranb/google-search-console-mcp?style=social)](https://github.com/surendranb/google-search-console-mcp/network/members)
 [![Python 3.8+](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/)
