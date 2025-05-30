@@ -131,4 +131,8 @@ MANIFEST
 
 # Documentation
 docs/_build/
-site/ 
+site/
+
+# Debug logging
+gsc_debug.log 
+gsc_debug_test.py

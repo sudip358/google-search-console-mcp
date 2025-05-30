@@ -4,13 +4,13 @@ build-backend = "hatchling.build"
 
 [project]
 name = "google-search-console-mcp"
-version = "0.2.0"
+version = "0.2.2"
 description = "Connect Google Search Console data to Claude, Cursor and other MCP clients. Query your website's search performance data in natural language."
 readme = "README.md"
 requires-python = ">=3.8"
 license = "MIT"
 authors = [
-    { name = "Surendran B", email = "surendran.balachandran@gmail.com" }
+    { name = "Surendran B", email = "reachsuren@gmail.com" }
 ]
 classifiers = [
     "Development Status :: 4 - Beta",

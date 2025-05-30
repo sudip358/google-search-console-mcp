@@ -225,7 +225,7 @@ def get_search_analytics(
             if 'keys' in row:
                 for i, dimension in enumerate(dimensions):
                     if i < len(row['keys']):
-                        data_row[dimension] = row['keys'][i]
+                        data_row[dimension] = str(row['keys'][i])
             
             # Add metric values (all GSC metrics are always returned)
             data_row['clicks'] = row.get('clicks', 0)
